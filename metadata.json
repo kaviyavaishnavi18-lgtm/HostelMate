@@ -1,0 +1,6 @@
+{
+  "name": "HostelMate",
+  "description": "Smart expense splitter for hostel students, mess bills, trips, and room expenses.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

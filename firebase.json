@@ -1,0 +1,8 @@
+{
+  "firestore": [
+    {
+      "database": "ai-studio-android-hostelma-72b541a2-6fac-465e-b538-e7e821aa00a1",
+      "rules": "firestore.rules"
+    }
+  ]
+}

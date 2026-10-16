@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "HostelMate Firestore Blueprint",
+  "entities": {
+    "UserProfile": {
+      "collection": "users",
+      "path": "users/{userId}",
+      "description": "User profile with student details",
+      "fields": {
+        "userId": { "type": "string", "description": "Auth UID" },
+        "name": { "type": "string" },
+        "roomNumber": { "type": "string" },
+        "email": { "type": "string" },
+        "upiId": { "type": "string" },
+        "createdAt": { "type": "timestamp" }
+      },
+      "required": ["userId", "name", "roomNumber"]
+    },
+    "UserGroup": {
+      "collection": "groups",
+      "path": "users/{userId}/groups/{groupId}",
+      "description": "Hostel groups belonging to the user",
+      "fields": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "name": { "type": "string" },
+        "type": { "type": "string" },
+        "description": { "type": "string" },
+        "inviteCode": { "type": "string" },
+        "createdAt": { "type": "timestamp" }
+      },
+      "required": ["userId", "name", "type"]
+    },
+    "UserExpense": {
+      "collection": "expenses",
+      "path": "users/{userId}/expenses/{expenseId}",
+      "description": "Shared expenses recorded by the user",
+      "fields": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "groupId": { "type": "number" },
+        "title": { "type": "string" },
+        "amount": { "type": "number" },
+        "category": { "type": "string" },
+        "date": { "type": "number" }
+      },
+      "required": ["userId", "title", "amount"]
+    },
+    "UserMessBill": {
+      "collection": "messBills",
+      "path": "users/{userId}/messBills/{billId}",
+      "description": "Monthly mess bills logged by the user",
+      "fields": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "monthYear": { "type": "string" },
+        "totalAmount": { "type": "number" },
+        "totalDays": { "type": "number" },
+        "dailyRate": { "type": "number" }
+      },
+      "required": ["userId", "monthYear", "totalAmount"]
+    }
+  }
+}
